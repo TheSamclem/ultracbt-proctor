@@ -1,9 +1,6 @@
 body {
-  background: linear-gradient(135deg, white, #f48fb1);
-  color: #fff;
-
-
-
+  /*background-color: #f8f9fa;*/
+  background-color: #96D4D4;
 }
 
 .login-container {
@@ -11,7 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /*background: linear-gradient(135deg, #007bff, #6610f2);*/
+  /*background: linear-gradient(135deg, #010911ff, #5406d2ff);*/
 }
 
 .login-box {

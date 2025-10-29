@@ -8,7 +8,7 @@ function CameraCapture() {
     { id: 1, name: "Ayokunle Adebolu", regNo: "CBT001" },
     { id: 2, name: "Samuel Clement", regNo: "CBT002" },
     { id: 3, name: "David Faola", regNo: "CBT003" },
-    { id: 4, name: "Romiluyi Victor", regNo: "CBT004" },
+    { id: 4, name: "Adebolu Oladapo", regNo: "CBT004" },
     { id: 5, name: "Adebolu Ayodeji", regNo: "CBT005" },
     { id: 6, name: "Adebolu Adebayo", regNo: "CBT006" },
   ];
