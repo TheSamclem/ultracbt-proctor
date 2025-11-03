@@ -1,10 +1,8 @@
 .camera-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* 3 per row */
   gap: 20px;
   padding: 100px 40px 40px;
-  /* space below fixed header */
   justify-items: center;
 }
 

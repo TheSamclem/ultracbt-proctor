@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./LoginPage.css";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { toast } from "react-toastify";
 
 function LoginPage() {
@@ -10,46 +9,21 @@ function LoginPage() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // 🔗 Replace this with your real backend API endpoint
-  const LOGIN_URL = "http://localhost:5000/api/auth/login";
-
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    try {
-      const response = await axios.post(LOGIN_URL, {
-        username,
-        password,
-      });
-
-      // ✅ Assuming your backend returns something like:
-      // { success: true, token: "...", user: {...} }
-
-      if (response.data.success) {
-        const { token, user } = response.data;
-
-        // Save token (and maybe user info) locally
-        localStorage.setItem("token", token);
-        localStorage.setItem("user", JSON.stringify(user));
-
+    // Mock login (temporary)
+    setTimeout(() => {
+      if (username === "proctor" && password === "1987") {
         toast.success("Login successful!");
-        navigate("/dashboard");
+        localStorage.setItem("user", JSON.stringify({ username }));
+        navigate("/cameracapture"); // go to main page after login
       } else {
-        toast.error(response.data.message || "Invalid credentials");
+        toast.error("Invalid username or password");
       }
-    } catch (error) {
-      console.error("Login error:", error);
-      if (error.response) {
-        // Server responded with an error
-        toast.error(error.response.data.message || "Login failed");
-      } else {
-        // Network or other issue
-        toast.error("Network error. Please check your connection.");
-      }
-    } finally {
       setLoading(false);
-    }
+    }, 1000);
   };
 
   return (
@@ -89,4 +63,3 @@ function LoginPage() {
 }
 
 export default LoginPage;
-
